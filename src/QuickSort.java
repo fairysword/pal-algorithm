@@ -22,7 +22,7 @@ public class QuickSort {
 
     // 基于swap的分区
     private static int partitionV2(int[] unsorted, int low, int high) {
-        int pivot = unsorted[high];
+        int pivot = unsorted[low];
         int i = low; int j = high + 1;
         while (true) {
             while (i < high && unsorted[++i] <= pivot);
@@ -47,7 +47,7 @@ public class QuickSort {
             return;
         }
         // partition to a & b
-        int m = partition(arr, l, h);
+        int m = partitionV2(arr, l, h);
         // quickSort a
         quickSort(arr, l, m - 1);
         // quickSort b
