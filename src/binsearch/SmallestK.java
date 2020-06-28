@@ -24,8 +24,7 @@ public class SmallestK {
         }
         // 由于pivot右侧的值是大于等于pivot的，因此交换的位置必须是小于等于pivot一侧的位置，否则可能把大于pivot的值交换到low的位置，就不符合
         // 划分的逻辑了
-        int t = i == j ? i : i -1; // i和j不同是，交换的位置j即i-1，总之是j
-        swap(unsorted, low, t); // 必须是j 把中轴元素swap到哪个index上，即返回此index
+        swap(unsorted, low, j); // 必须是j 把中轴元素swap到哪个index上，即返回此index
         return j; // 必须是j，即i-1
     }
 
