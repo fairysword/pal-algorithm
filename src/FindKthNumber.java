@@ -1,30 +1,24 @@
-import java.util.Arrays;
-
 public class FindKthNumber {
 
-    // 简化为m个有序数组的合并，时间复杂度k*m
-    public int findKthNumber(int m, int n, int k) {
-        int res = -1;
-        int[] pos = new int[m];
-        Arrays.fill(pos, 1);
-        int start = 0;
-        while (start < k) {
-            res = findMin(pos, m, n);
-            start ++;
+    public boolean enough(int x, int m, int n, int k) {
+        int count = 0;
+        for (int i = 1; i <= m; i++) {
+            count += Math.min(x / i, n);
         }
-        return pos[res]-- * (res + 1);
+        return count >= k;
     }
 
-    int findMin(int[] arr, int m, int n) {
-        int min = arr[0];
-        int index = 0;
-        for (int i = 0; i <= m && arr[i] <= n; i++) {
-            if (arr[i] * (i + 1) < min) {
-                index = i;
+    public int findKthNumber(int m, int n, int k) {
+        int lo = 1, hi = m * n; // 将值域定义为一个有序数组
+        while (lo < hi) {
+            int mi = lo + (hi - lo) / 2;
+            if (!enough(mi, m, n, k)) {
+                lo = mi + 1;
+            } else {
+                hi = mi;
             }
         }
-        arr[index]++;
-        return index;
+        return lo;
     }
 
     public static void main(String[] args) {
