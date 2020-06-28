@@ -1,3 +1,4 @@
+package binsearch;
 
 // https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target
 public class NextGreatestLetter {

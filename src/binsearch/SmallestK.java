@@ -1,3 +1,5 @@
+package binsearch;
+
 import java.util.Arrays;
 
 public class SmallestK {
