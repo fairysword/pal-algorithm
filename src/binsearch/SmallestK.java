@@ -11,7 +11,7 @@ public class SmallestK {
     }
 
     // 基于swap的分区
-    private static int partitionV2(int[] unsorted, int low, int high) {
+    private static int partition(int[] unsorted, int low, int high) {
         int pivot = unsorted[low];
         int i = low; int j = high + 1;
         while (true) {
@@ -35,7 +35,7 @@ public class SmallestK {
         }
         int piv = -1;
         int low = 0, high = arr.length -1;
-        while ((piv = partitionV2(arr, low, high)) != k-1) {
+        while ((piv = partition(arr, low, high)) != k-1) {
             if (piv < k -1) {
                 low = piv + 1;
             } else {
