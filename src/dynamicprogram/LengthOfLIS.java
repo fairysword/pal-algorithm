@@ -36,10 +36,10 @@ public class LengthOfLIS {
         if (arr[mid] < dest) {
             low = mid + 1;
         } else {
-            if ((mid > 0 && arr[mid - 1] < dest) || mid == 0) {
+            if (low == high) {
                 return mid;
             }
-            high = mid - 1;
+            high = mid;
         }
         return binSearch(dest, arr, low, high);
     }
