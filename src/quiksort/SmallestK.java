@@ -1,4 +1,4 @@
-package binsearch;
+package quiksort;
 
 import java.util.Arrays;
 
