@@ -6,16 +6,6 @@ import java.util.Stack;
 
 public class InorderTraversal {
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
@@ -39,7 +29,7 @@ public class InorderTraversal {
     }
 
     public static void main(String[] args) {
-
+//        new InorderTraversal().inorderTraversal();
     }
 
 }
